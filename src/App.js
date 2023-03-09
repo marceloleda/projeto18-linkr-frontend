@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
-import TimeLine from "./Components/TimeLine";
+import TimeLine from "./pages/timeline/TimeLine";
 
 export default function App() {
   return (

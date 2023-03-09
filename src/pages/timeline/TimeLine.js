@@ -7,7 +7,9 @@ export default function TimeLine(){
     const [link, setLink] = useState('');
     const [description, setDescription] = useState('');
   
-    
+    function SendPost(){
+        const URL = ``
+    }
 
     return(
         <>
