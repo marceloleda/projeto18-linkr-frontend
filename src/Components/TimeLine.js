@@ -1,23 +1,35 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Tama from "../../src/Assets/images/saitama.jpg"
 
 export default function TimeLine(){
+    const [link, setLink] = useState('');
+    const [description, setDescription] = useState('');
+  
+    
+
     return(
         <>
             <Conteiner>
                 <Titlle><h1>timeline</h1></Titlle>
-                <PublishBox>
+                <PublishBox data-test="publish-box">
                     <ImgProfile><img src={Tama} alt="profile"/></ImgProfile>
                     <ConteinerInput>
                         <h2>What are you going to share today?</h2>
-                        <Forms>
-                            <Inserir type="link" placeholder="http://..."/>
-                            <Inserir type="text" placeholder="http://..." className="segundo"/>
-
-                        </Forms>
+                        <form >
+                        <Inserir data-test="link" type="text" placeholder="http://..." onChange={(e)=>{
+                                setLink({link: e.target.value})
+                            }} required/>
+                            <Inserir data-test="description" type="text" placeholder="Awesome article about #javascript" className="segundo" onChange={(e)=>{
+                                setDescription({description: e.target.value})
+                            }} required/>
+                            <BotaoContainer>
+                                <Botao data-test="publish-btn" type="submit">Publish</Botao>
+                            </BotaoContainer>
+                        </form>
                     </ConteinerInput>
                 </PublishBox>
-
             </Conteiner>
         </>
     );
@@ -66,6 +78,10 @@ const ConteinerInput = styled.div`
     height:150px;
     width: 505px;
 `;
+const BotaoContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
+`;
 const Inserir = styled.input`
     width: 503px;
     height: 30px;
@@ -82,16 +98,26 @@ const Inserir = styled.input`
     }
     &.segundo{
         height: 66px;
-        
+        padding-top: 0; 
+        position: relative;
+        line-height: 380px;
+        padding-top: 0px; /* ajusta o espaço entre o topo do input e o texto */
+    padding-bottom: 25px; /* ajusta o espaço entre o texto e o fundo do input */
     }
-    
-
+    &.segundo::placeholder {
+        position: absolute; /* define o posicionamento do placeholder como absoluto */
+        top: 10px; /* ajusta a posição vertical do placeholder */
+        line-height: normal; /* redefine a linha de altura para a altura padrão */
+      }
 `;
-const Forms = styled.div`
-    form{
-            display:flex;
-            flex-direction:column;
-            justify-content: center;
-            align-items: center;
-        }
+const Botao = styled.button`
+    width: 112px;
+    height: 31px;
+    background: #1877F2;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
 `;
