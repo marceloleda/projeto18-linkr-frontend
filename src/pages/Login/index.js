@@ -9,9 +9,8 @@ import Input from "../../components/Input";
 import StyledLink from "../../components/StyledLink";
 import StyledDiv from "../../components/StyledDiv";
 
-
 export default function Login() {
-  const [formData, setformData] = useState({ email: '', password: '' })
+  const [formData, setformData] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
   const { auth, login } = useAuth();
   const navigate = useNavigate();
@@ -40,16 +39,17 @@ export default function Login() {
     promise.catch(() => {
       setIsLoading(false);
 
-      alert('Erro, tente novamente');
+      alert("Erro, tente novamente");
     });
   }
 
   return (
     <Container>
       <StyledDiv>
-      <h1>Linkr</h1>
-      <h2>save, share and discover <br/>
-the best links on the web</h2>
+        <h1>Linkr</h1>
+        <h2>save, share and discover <br />
+          the best links on the web
+        </h2>
       </StyledDiv>
 
       <Form onSubmit={handleSubmit}>
@@ -73,14 +73,11 @@ the best links on the web</h2>
         />
 
         <Button type="submit" disabled={isLoading}>
-            Log In
+          Log In
         </Button>
 
-        <StyledLink to="/sign-up">
-        First time? Create an account!
-        </StyledLink>
+        <StyledLink to="/sign-up">First time? Create an account!</StyledLink>
       </Form>
-
     </Container>
   );
 }
