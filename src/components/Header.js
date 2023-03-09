@@ -11,11 +11,11 @@ export default function Header() {
   return (
     <HeaderContainer >
       <Link to={"/"}>Linkr</Link>
-      <div>
+      <div onClick={() => setVisible(!visible)}>
         {visible ? (
-          <MdKeyboardArrowUp size={38} onClick={() => setVisible(!visible)} />
+          <MdKeyboardArrowUp size={38} />
         ) : (
-          <MdKeyboardArrowDown size={38} onClick={() => setVisible(!visible)} />
+          <MdKeyboardArrowDown size={38} />
         )}
         <UserImage src="http://tny.im/ufP" />
         {/* <UserImage src={user.image ? user.image : "http://tny.im/ufP"} /> */}
