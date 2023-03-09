@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   align-items: flex-start;
   font-weight: 700;
   padding: 7%;
-  padding-top: 20%;
+  padding-top: 16%;
   h1{
     font-family: 'Passion One', cursive;
     font-size: 106px;

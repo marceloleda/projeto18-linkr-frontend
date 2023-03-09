@@ -76,7 +76,7 @@ the best links on the web</h2>
             Log In
         </Button>
 
-        <StyledLink to="/register">
+        <StyledLink to="/sign-up">
         First time? Create an account!
         </StyledLink>
       </Form>
