@@ -24,6 +24,6 @@ export default function App() {
 
 const ContainerApp = styled.div`
   height: 100vh;
-  background-color: darkgray;
+  background-color: #333333;
 `;
 
