@@ -17,3 +17,10 @@ function signUp(body) {
 
   return promise;
 }
+
+const api = {
+  login,
+  signUp
+}
+
+export default api;

@@ -1,14 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import api from "../../services/api";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import Form from "../../components/Form";
+import Input from "../../components/Input";
+import StyledLink from "../../components/StyledLink";
+import StyledDiv from "../../components/StyledDiv";
+
 
 export default function Register() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ name: '', email: '', password: '', image: '' });
+  const [formData, setformData] = useState({ name: '', email: '', password: '', image: '' });
   const [isLoading, setIsLoading] = useState(false);
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setformData({ ...formData, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e) {
@@ -31,12 +38,16 @@ export default function Register() {
 
   return (
     <Container>
-      <img alt="logo.svg" src={Logo} />
+      <StyledDiv>
+      <h1>Linkr</h1>
+      <h2>save, share and discover <br/>
+the best links on the web</h2>
+      </StyledDiv>
 
       <Form onSubmit={handleSubmit}>
         <Input
           type="email"
-          placeholder="email"
+          placeholder="e-mail"
           name="email"
           onChange={handleChange}
           value={formData.email}
@@ -45,7 +56,7 @@ export default function Register() {
         />
         <Input
           type="password"
-          placeholder="senha"
+          placeholder="password"
           name="password"
           onChange={handleChange}
           value={formData.password}
@@ -54,7 +65,7 @@ export default function Register() {
         />
         <Input
           type="text"
-          placeholder="nome"
+          placeholder="username"
           name="name"
           onChange={handleChange}
           value={formData.name}
@@ -63,7 +74,7 @@ export default function Register() {
         />
         <Input
           type="text"
-          placeholder="foto"
+          placeholder="picture url"
           name="image"
           onChange={handleChange}
           value={formData.image}
@@ -71,12 +82,14 @@ export default function Register() {
           required
         />
 
-        <Button type="submit" disabled={isLoading}> botão </Button>
+        <Button type="submit" disabled={isLoading}> Sign Up </Button>
+
+        <StyledLink to="/">
+        Switch back to log in
+        </StyledLink>
       </Form>
 
-      <StyledLink to="/">
-        Já tem uma conta? Faça login!
-      </StyledLink>
+
     </Container>
   );
 }

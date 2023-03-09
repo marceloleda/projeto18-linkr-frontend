@@ -2,21 +2,28 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../../services/api";
 import useAuth from "../../hooks/useAuth";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import Form from "../../components/Form";
+import Input from "../../components/Input";
+import StyledLink from "../../components/StyledLink";
+import StyledDiv from "../../components/StyledDiv";
+
 
 export default function Login() {
-  const [formData, setFormData] = useState({ email: '', password: '' })
+  const [formData, setformData] = useState({ email: '', password: '' })
   const [isLoading, setIsLoading] = useState(false);
   const { auth, login } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (auth && auth.token) {
-      navigate("/today");
+      navigate("/");
     }
   }, []);
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setformData({ ...formData, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e) {
@@ -28,7 +35,7 @@ export default function Login() {
       setIsLoading(false);
 
       login(response.data);
-      navigate("/today");
+      navigate("/timeline");
     });
     promise.catch(() => {
       setIsLoading(false);
@@ -39,12 +46,16 @@ export default function Login() {
 
   return (
     <Container>
-      <img alt="logo.svg" src={Logo} />
+      <StyledDiv>
+      <h1>Linkr</h1>
+      <h2>save, share and discover <br/>
+the best links on the web</h2>
+      </StyledDiv>
 
       <Form onSubmit={handleSubmit}>
         <Input
           type="email"
-          placeholder="email"
+          placeholder="e-mail"
           name="email"
           onChange={handleChange}
           value={formData.email}
@@ -53,7 +64,7 @@ export default function Login() {
         />
         <Input
           type="password"
-          placeholder="senha"
+          placeholder="password"
           name="password"
           onChange={handleChange}
           value={formData.password}
@@ -62,13 +73,14 @@ export default function Login() {
         />
 
         <Button type="submit" disabled={isLoading}>
-            botão
+            Log In
         </Button>
+
+        <StyledLink to="/register">
+        First time? Create an account!
+        </StyledLink>
       </Form>
 
-      <StyledLink to="/register">
-        Não tem uma conta? Cadastre-se!
-      </StyledLink>
     </Container>
   );
 }
