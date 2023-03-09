@@ -1,5 +1,4 @@
 import axios from 'axios';
-dotenv.config();
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 
