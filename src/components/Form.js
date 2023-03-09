@@ -6,8 +6,8 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 5%;
-  margin-top: 16%;
+  justify-content: center;
+  padding: 0 5% 8% 5%;
   gap: 13px;
 `;
 
