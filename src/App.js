@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
+import Header from "./components/page/Header";
+import { background } from "./constants/colors";
 
 export default function App() {
   return (
     <ContainerApp>
-      <p>Hello World!</p>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<componente />} />
@@ -19,5 +21,5 @@ export default function App() {
 
 const ContainerApp = styled.div`
   height: 100vh;
-  background-color: darkgray;
+  background-color: ${background};
 `;
