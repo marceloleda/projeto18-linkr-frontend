@@ -1,26 +1,27 @@
 import styled from "styled-components";
+import { black, white } from "../constants/colors";
 
-const StyledDiv = styled.button`
-  background-color: #151515;
-  color: #FFFFFF;
-  width: 100%;
-  height: 175px;
+const StyledDiv = styled.div`
+  background-color: ${black};
+  color: ${white};
+  width: 65%;
+  height: 100vh;
+  align-items: flex-start;
   font-weight: 700;
-  color: #FFFFFF;
+  padding: 7%;
+  padding-top: 20%;
   h1{
-    font-family: Passion One;
-    font-size: 76px;
+    font-family: 'Passion One', cursive;
+    font-size: 106px;
     line-height: 84px;
     letter-spacing: 0.05em;
-    text-align: center;
+    text-align: left;
   }
 
   h2{
-    font-family: Oswald;
-    font-size: 23px;
-    line-height: 34px;
-    letter-spacing: 0em;
-    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 43px;
+    text-align: left;
   }
 `;
 

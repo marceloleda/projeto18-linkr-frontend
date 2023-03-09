@@ -47,7 +47,7 @@ export default function Login() {
   return (
     <Container>
       <StyledDiv>
-      <h1>linkr</h1>
+      <h1>Linkr</h1>
       <h2>save, share and discover <br/>
 the best links on the web</h2>
       </StyledDiv>
@@ -75,11 +75,12 @@ the best links on the web</h2>
         <Button type="submit" disabled={isLoading}>
             Log In
         </Button>
+
+        <StyledLink to="/register">
+        First time? Create an account!
+        </StyledLink>
       </Form>
 
-      <StyledLink to="/register">
-      First time? Create an account!
-      </StyledLink>
     </Container>
   );
 }
