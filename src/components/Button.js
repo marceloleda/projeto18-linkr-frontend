@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { blue, white } from "../constants/colors";
 
 const Button = styled.button`
-  width: 300px;
-  height: 45px;
+  width: 100%;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +15,8 @@ const Button = styled.button`
   text-align: center;
   font-family: Oswald;
   
-  background-color: #1877F2;
-  color: #FFFFFF;
+  background-color: ${blue};
+  color: ${white};
 `;
 
 export default Button;

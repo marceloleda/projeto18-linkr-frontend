@@ -39,7 +39,7 @@ export default function Register() {
   return (
     <Container>
       <StyledDiv>
-      <h1>linkr</h1>
+      <h1>Linkr</h1>
       <h2>save, share and discover <br/>
 the best links on the web</h2>
       </StyledDiv>
@@ -83,11 +83,13 @@ the best links on the web</h2>
         />
 
         <Button type="submit" disabled={isLoading}> Sign Up </Button>
+
+        <StyledLink to="/">
+        Switch back to log in
+        </StyledLink>
       </Form>
 
-      <StyledLink to="/">
-      Switch back to log in
-      </StyledLink>
+
     </Container>
   );
 }
