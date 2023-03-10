@@ -31,7 +31,6 @@ const api = {
   signUp,
   timeLine,
   getPosts
-
 }
 
 export default api;
