@@ -87,8 +87,6 @@ const ConteinerPost = styled.div`
     height:150px;
     width: 505px;
     color: ${white};
-<<<<<<< Updated upstream:src/pages/timeline/Timeline_posts.js
-=======
 `;
 const MetadataBox = styled.div`
   display: flex;
@@ -99,5 +97,4 @@ const MetadataBox = styled.div`
   background-color: #1c1c1c;
   border-radius: 8px;
   box-sizing: border-box;
->>>>>>> Stashed changes:src/pages/timeline/TimelinePosts.js
 `;

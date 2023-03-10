@@ -1,27 +1,56 @@
-import { useContext, useState } from "react";
+import { useState, useEffect, useRef } from 'react';
 import styled from "styled-components";
 import { black, white } from "../constants/colors";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import up from "../Assets/images/up.svg"
+import down from "../Assets/images/down.svg"
 import { Link, Navigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
+  const { logout } = useAuth(); 
   //const { user } = useContext(UserContext);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setVisible(false);
+      }
+    };
+    
+    if (visible) {
+      document.addEventListener('click', handleDocumentClick);
+    }
+    
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [visible]);
+
+  const handleClick = () => {
+    setVisible(!visible);
+    console.log('Icon clicked')
+  }
+
 
   return (
     <HeaderContainer >
       <Link to={"/"}>Linkr</Link>
-      <div onClick={() => setVisible(!visible)}>
-        {visible ? (
-          <MdKeyboardArrowUp size={38} />
-        ) : (
-          <MdKeyboardArrowDown size={38} />
-        )}
-        <UserImage src="http://tny.im/ufP" />
-        {/* <UserImage src={user.image ? user.image : "http://tny.im/ufP"} /> */}
+      
+      <div ref={menuRef}>
+      
+      {visible ? (
+        <Icon src={up} size={38} onClick={handleClick} />
+      ) : (
+        <Icon src={down} size={38} onClick={handleClick} />
+      )}
+        <UserImage onClick={handleClick} src="http://tny.im/ufP" />
+        {/* <UserImage data-test="avatar" src={user.image ? user.image : "http://tny.im/ufP"} /> */}
       </div>
-      <Logout show={visible ? visible : undefined} to={"/"}>
-        <button>Logout</button>
+      
+      <Logout data-test="menu" show={visible} to={"/"}>
+        <button data-test="logout" onClick={logout}>Logout</button>
       </Logout>
     </HeaderContainer>
   );
@@ -43,6 +72,15 @@ const HeaderContainer = styled.div`
     text-decoration: none;
     color: ${white};
   }
+
+  @media screen and (max-width: 375px) {
+    width: 100vw;
+    a {
+      font-size: 45px;
+      text-align: left;
+     }
+  }
+
 `;
 
 const UserImage = styled.img`
@@ -76,4 +114,19 @@ const Logout = styled(Link)`
     border-radius: 0px 0px 0px 20px;
     cursor: pointer;
   }
+`;
+
+
+const Icon = styled.img`
+  height: 13px;
+  width: 18px;
+  position: fixed;
+  top: 35px;
+  right: 90px;
+
+  @media screen and (max-width: 375px) {
+    height: 10px;
+    width: 14px;
+    left: 280px;
+    }
 `;
