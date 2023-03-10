@@ -55,6 +55,7 @@ the best links on the web</h2>
 
       <Form onSubmit={handleSubmit}>
         <Input
+          data-test="email"
           type="email"
           placeholder="e-mail"
           name="email"
@@ -64,6 +65,7 @@ the best links on the web</h2>
           required
         />
         <Input
+          data-test="password"
           type="password"
           placeholder="password"
           name="password"
@@ -73,7 +75,7 @@ the best links on the web</h2>
           required
         />
 
-        <Button type="submit" disabled={isLoading}>
+        <Button data-test="login-btn" type="submit" disabled={isLoading}>
           {
             isLoading
               ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
@@ -81,7 +83,7 @@ the best links on the web</h2>
           }
         </Button>
 
-        <StyledLink to="/register">
+        <StyledLink data-test="sign-up-link" to="/register">
         First time? Create an account!
         </StyledLink>
       </Form>
