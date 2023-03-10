@@ -2,22 +2,9 @@ import styled from "styled-components";
 import { white } from "../../constants/colors";
 import Tama from "../../Assets/images/saitama.jpg"
 import { useEffect, useState } from "react";
-import urlMetadata from 'url-metadata';
 
 
 export default function List_posts(){
-    const url = 'https://www.google.com';
-
-urlMetadata(url).then(
-  function (metadata) { // sucesso
-    console.log(metadata.title);
-    console.log(metadata.description);
-    console.log(metadata.image);
-  },
-  function (error) { // erro
-    console.error(error);
-  }
-);
 
     return(
         <>
@@ -28,7 +15,6 @@ urlMetadata(url).then(
                     <PostText>
                         <h1>damsndksadas das ddada dad admad adisaldnslad oisadisdsabdls adjsad sad asd</h1>
                     </PostText>
-             
                 </ConteinerPost>
             </PostBox>
         </>
