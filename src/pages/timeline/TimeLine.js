@@ -1,37 +1,66 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Tama from "../../src/Assets/images/saitama.jpg"
+import Tama from "../../Assets/images/saitama.jpg"
+import Header from "../../components/Header";
+import api from "../../services/api";
+import List_posts from "./Timeline_posts";
 
 export default function TimeLine(){
     const [link, setLink] = useState('');
     const [description, setDescription] = useState('');
+    const [isPublishing, setIsPublishing] = useState(false);
+
   
-    function SendPost(){
-        const URL = ``
+    function SendPost(event){
+        event.preventDefault();
+        setIsPublishing(true);
+
+        const promise = api.timeLine({
+            link,
+            description
+        })
+        promise.then((res)=>{
+            console.log(res)
+            setIsPublishing(false);
+            setLink("");
+            setDescription("");
+        })
+        .catch((err)=>{
+            setIsPublishing(false);
+
+           alert("There was an error publishing your link")
+            console.log(err.message)
+          })
+
+        console.log(promise)
     }
 
     return(
         <>
             <Conteiner>
+                <Header/>
                 <Titlle><h1>timeline</h1></Titlle>
                 <PublishBox data-test="publish-box">
                     <ImgProfile><img src={Tama} alt="profile"/></ImgProfile>
                     <ConteinerInput>
                         <h2>What are you going to share today?</h2>
-                        <form >
+                        <form onSubmit={SendPost}>
                         <Inserir data-test="link" type="text" placeholder="http://..." onChange={(e)=>{
-                                setLink({link: e.target.value})
-                            }} required/>
+                                setLink(e.target.value)
+                            }} required
+                            disabled={isPublishing}
+                            />
                             <Inserir data-test="description" type="text" placeholder="Awesome article about #javascript" className="segundo" onChange={(e)=>{
-                                setDescription({description: e.target.value})
-                            }} required/>
+                                setDescription(e.target.value)
+                            }}   disabled={isPublishing}/>
                             <BotaoContainer>
-                                <Botao data-test="publish-btn" type="submit">Publish</Botao>
+                                <Botao data-test="publish-btn" type="submit">{isPublishing ? "Publishing..." : "Publish"}</Botao>
                             </BotaoContainer>
                         </form>
                     </ConteinerInput>
                 </PublishBox>
+                {<List_posts/>}
             </Conteiner>
         </>
     );
@@ -111,6 +140,7 @@ const Inserir = styled.input`
         top: 10px; /* ajusta a posição vertical do placeholder */
         line-height: normal; /* redefine a linha de altura para a altura padrão */
       }
+      
 `;
 const Botao = styled.button`
     width: 112px;
