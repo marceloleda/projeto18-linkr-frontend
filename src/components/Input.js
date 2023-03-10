@@ -16,6 +16,10 @@ const Input = styled.input`
     color: #9F9F9F;
     fill: solid;
   }
+
+  @media screen and (max-width: 800px) {
+    
+  }
 `;
 
 export default Input;

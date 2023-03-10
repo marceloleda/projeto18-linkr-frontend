@@ -27,6 +27,10 @@ const StyledDiv = styled.div`
     line-height: 64px;
     text-align: left;
   }
+
+  @media screen and (max-width: 800px) {
+    
+  }
 `;
 
 export default StyledDiv;
