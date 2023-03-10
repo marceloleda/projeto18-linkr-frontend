@@ -21,6 +21,16 @@ const Button = styled.button`
   
   background-color: ${blue};
   color: ${white};
+
+  @media screen and (max-width: 375px) {
+    
+    height: 55px;
+    width: 90%;
+    left: 23px;
+    top: 215px;
+    border-radius: 6px;
+  }
+
 `;
 
 export default Button;

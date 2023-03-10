@@ -12,10 +12,10 @@ const Container = styled.div`
     margin-top: 65px;
   }
 
-  @media screen and (min-width: 800px) {
-    img{
-      margin-top: 100px;
-    }
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
   }
 `;
 

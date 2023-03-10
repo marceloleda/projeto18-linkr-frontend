@@ -16,6 +16,10 @@ const StyledLink = styled(Link)`
   letter-spacing: 0em;
   text-align: left;
   margin-top: 12px;
+
+  @media screen and (max-width: 800px) {
+    
+  }
 `;
 
 export default StyledLink;

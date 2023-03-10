@@ -16,6 +16,15 @@ const Input = styled.input`
     color: #9F9F9F;
     fill: solid;
   }
+
+  @media screen and (max-width: 375px) {
+    
+    height: 55px;
+    width: 90%;
+    left: 23px;
+    top: 215px;
+    border-radius: 6px;
+  }
 `;
 
 export default Input;

@@ -27,6 +27,26 @@ const StyledDiv = styled.div`
     line-height: 64px;
     text-align: left;
   }
+
+  @media screen and (max-width: 375px) {
+    width: 100vw;
+    height: 30%;
+
+    h1{
+      text-align: center;
+      padding-top: 50px;
+      font-size: 76px;
+      line-height: 60px;
+    }
+    h2{
+      text-align: center;
+      font-size: 23px;
+      font-family: Oswald;
+      line-height: 34px;
+    }
+
+    
+  }
 `;
 
 export default StyledDiv;
