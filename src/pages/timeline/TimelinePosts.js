@@ -35,9 +35,12 @@ export default function ListPosts(){
                     {post.metadata && (
                         <MetadataBox>
                             <Div1>
+                            
                                 <h3>{post.metadata.title}</h3>
                                 <p>{post.metadata.description}</p>
+                            <a href={post.metadata.url} target="_blank" rel="noreferrer">                             
                                 <h2>{post.metadata.url}</h2>
+                            </a>
                             </Div1>
 
                             <a href={post.metadata.url} target="_blank" rel="noreferrer"> 
