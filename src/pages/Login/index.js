@@ -10,9 +10,8 @@ import StyledLink from "../../components/StyledLink";
 import StyledDiv from "../../components/StyledDiv";
 import { ThreeDots } from "react-loader-spinner";
 
-
 export default function Login() {
-  const [formData, setformData] = useState({ email: '', password: '' })
+  const [formData, setformData] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
   const { auth, login } = useAuth();
   const navigate = useNavigate();
@@ -41,16 +40,17 @@ export default function Login() {
     promise.catch(() => {
       setIsLoading(false);
 
-      alert('Erro, tente novamente');
+      alert("Erro, tente novamente");
     });
   }
 
   return (
     <Container>
       <StyledDiv>
-      <h1>Linkr</h1>
-      <h2>save, share and discover <br/>
-the best links on the web</h2>
+        <h1>Linkr</h1>
+        <h2>save, share and discover <br />
+          the best links on the web
+        </h2>
       </StyledDiv>
 
       <Form onSubmit={handleSubmit}>
@@ -83,11 +83,11 @@ the best links on the web</h2>
           }
         </Button>
 
-        <StyledLink data-test="sign-up-link" to="/register">
+        <StyledLink data-test="sign-up-link" to="/sign-up">
         First time? Create an account!
         </StyledLink>
-      </Form>
 
+      </Form>
     </Container>
   );
 }
