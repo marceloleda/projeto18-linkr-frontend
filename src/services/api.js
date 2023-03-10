@@ -17,10 +17,15 @@ function signUp(body) {
 
   return promise;
 }
-
+function timeLine(body){
+  const promise = axios.post(`${BASE_URL}/timeline`, body);
+  return promise;
+}
 const api = {
   login,
-  signUp
+  signUp,
+  timeLine
+
 }
 
 export default api;

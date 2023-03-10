@@ -20,7 +20,7 @@ export default function Header() {
         <UserImage src="http://tny.im/ufP" />
         {/* <UserImage src={user.image ? user.image : "http://tny.im/ufP"} /> */}
       </div>
-      <Logout show={visible} to={"/"}>
+      <Logout show={visible ? visible : undefined} to={"/"}>
         <button>Logout</button>
       </Logout>
     </HeaderContainer>

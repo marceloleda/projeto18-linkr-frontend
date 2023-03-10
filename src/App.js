@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import styled from "styled-components";
+import TimeLine from "./pages/timeline/TimeLine";
 import Header from "./components/Header";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -14,7 +15,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
-            <Route path="/timeline" element={<Header />} />
+            <Route path="/timeline" element={<TimeLine />} />
             <Route path="/" element={<componente />} />
           </Routes>
         </BrowserRouter>
