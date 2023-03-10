@@ -25,6 +25,7 @@ const api = {
   login,
   signUp,
   timeLine
+
 }
 
 export default api;
