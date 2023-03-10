@@ -39,7 +39,7 @@ export default function TimeLine(){
     return(
         <>
             <Conteiner>
-                <Header/>
+                
                 <Titlle><h1>timeline</h1></Titlle>
                 <PublishBox data-test="publish-box">
                     <ImgProfile><img src={Tama} alt="profile"/></ImgProfile>
