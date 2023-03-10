@@ -8,6 +8,7 @@ import Form from "../../components/Form";
 import Input from "../../components/Input";
 import StyledLink from "../../components/StyledLink";
 import StyledDiv from "../../components/StyledDiv";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function Login() {
   const [formData, setformData] = useState({ email: "", password: "" });
@@ -54,6 +55,7 @@ export default function Login() {
 
       <Form onSubmit={handleSubmit}>
         <Input
+          data-test="email"
           type="email"
           placeholder="e-mail"
           name="email"
@@ -63,6 +65,7 @@ export default function Login() {
           required
         />
         <Input
+          data-test="password"
           type="password"
           placeholder="password"
           name="password"
@@ -72,11 +75,18 @@ export default function Login() {
           required
         />
 
-        <Button type="submit" disabled={isLoading}>
-          Log In
+        <Button data-test="login-btn" type="submit" disabled={isLoading}>
+          {
+            isLoading
+              ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+              : "Log In"
+          }
         </Button>
 
-        <StyledLink to="/sign-up">First time? Create an account!</StyledLink>
+        <StyledLink data-test="sign-up-link" to="/sign-up">
+        First time? Create an account!
+        </StyledLink>
+
       </Form>
     </Container>
   );

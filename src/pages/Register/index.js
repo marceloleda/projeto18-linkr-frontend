@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import api from "../../services/api";
+import { ThreeDots } from 'react-loader-spinner';
 import Button from "../../components/Button";
 import Container from "../../components/Container";
 import Form from "../../components/Form";
@@ -46,6 +47,7 @@ the best links on the web</h2>
 
       <Form onSubmit={handleSubmit}>
         <Input
+          data-test="email"
           type="email"
           placeholder="e-mail"
           name="email"
@@ -55,6 +57,7 @@ the best links on the web</h2>
           required
         />
         <Input
+          data-test="password"
           type="password"
           placeholder="password"
           name="password"
@@ -64,6 +67,7 @@ the best links on the web</h2>
           required
         />
         <Input
+          data-test="username"
           type="text"
           placeholder="username"
           name="name"
@@ -73,6 +77,7 @@ the best links on the web</h2>
           required
         />
         <Input
+          data-test="picture-url"
           type="text"
           placeholder="picture url"
           name="image"
@@ -82,9 +87,15 @@ the best links on the web</h2>
           required
         />
 
-        <Button type="submit" disabled={isLoading}> Sign Up </Button>
+        <Button data-test="sign-up-btn" type="submit" disabled={isLoading}>
+        {
+            isLoading
+              ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+              : "Sign Up"
+          }
+        </Button>
 
-        <StyledLink to="/">
+        <StyledLink data-test="login-link" to="/">
         Switch back to log in
         </StyledLink>
       </Form>

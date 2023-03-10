@@ -3,25 +3,34 @@ import styled from "styled-components";
 import { black, white } from "../constants/colors";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { Link, Navigate } from "react-router-dom";
+import React, { useContext } from 'react';
+import { AuthContext } from './AuthContext'; 
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
   //const { user } = useContext(UserContext);
+  const handleLogout = () => {
+    const { setIsAuthenticated } = useContext(AuthContext); //substitua AuthContext por AuthData ou alguma outra variável da pasta contexts se não funcionar
+    setIsAuthenticated(false);
+  }
 
   return (
     <HeaderContainer >
       <Link to={"/"}>Linkr</Link>
+      
       <div onClick={() => setVisible(!visible)}>
+      
         {visible ? (
           <MdKeyboardArrowUp size={38} />
         ) : (
           <MdKeyboardArrowDown size={38} />
         )}
         <UserImage src="http://tny.im/ufP" />
-        {/* <UserImage src={user.image ? user.image : "http://tny.im/ufP"} /> */}
+        {/* <UserImage data-test="avatar" src={user.image ? user.image : "http://tny.im/ufP"} /> */}
       </div>
-      <Logout show={visible ? visible : undefined} to={"/"}>
-        <button>Logout</button>
+      
+      <Logout data-test="menu" show={visible ? visible : undefined} to={"/"}>
+        <button data-test="logout" onClick={handleLogout}>Logout</button>
       </Logout>
     </HeaderContainer>
   );
