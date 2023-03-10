@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Tama from "../../Assets/images/saitama.jpg"
 import Header from "../../components/Header";
+import { blue, white } from "../../constants/colors";
 import api from "../../services/api";
-import List_posts from "./Timeline_posts";
+import ListPosts from "./TimelinePosts";
 
 export default function TimeLine(){
     const [link, setLink] = useState('');
@@ -60,7 +61,7 @@ export default function TimeLine(){
                         </form>
                     </ConteinerInput>
                 </PublishBox>
-                {<List_posts/>}
+                {<ListPosts/>}
             </Conteiner>
         </>
     );
@@ -76,20 +77,21 @@ const Conteiner = styled.div`
 `;
 const Titlle = styled.div`
     width: 611px;
-    margin-top:150px;
-    margin-bottom:45;
+    margin-top: 150px;
+    margin-bottom: 45px;
+    font-family: 'Oswald', sans-serif;
     h1{
-        color: #FFFFFF;
+        color: ${white};
         font-size: 55px;
         font-weight: 700;
     }
 `;
 
 const PublishBox = styled.div`
-    display:flex;
+    display: flex;
     width: 611px;
     height: 209px;
-    background: #FFFFFF;
+    background: ${white};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
     box-sizing: border-box;
@@ -100,12 +102,14 @@ const ImgProfile = styled.div`
 
 img{
     height: 50px;
-    width:50px;
+    width: 50px;
     border-radius: 50%;
     margin-right: 18px;
 }
 `;
 const ConteinerInput = styled.div`
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
     height:150px;
     width: 505px;
 `;
@@ -133,23 +137,23 @@ const Inserir = styled.input`
         position: relative;
         line-height: 380px;
         padding-top: 0px; /* ajusta o espaço entre o topo do input e o texto */
-    padding-bottom: 25px; /* ajusta o espaço entre o texto e o fundo do input */
+        padding-bottom: 25px; /* ajusta o espaço entre o texto e o fundo do input */
     }
     &.segundo::placeholder {
         position: absolute; /* define o posicionamento do placeholder como absoluto */
         top: 10px; /* ajusta a posição vertical do placeholder */
         line-height: normal; /* redefine a linha de altura para a altura padrão */
-      }
+    }
       
 `;
 const Botao = styled.button`
     width: 112px;
     height: 31px;
-    background: #1877F2;
+    background: ${blue};
     border-radius: 5px;
     border:none;
     cursor: pointer;
-    color: #FFFFFF;
+    color: ${white};
     font-weight: 700;
     font-size: 14px;
 `;

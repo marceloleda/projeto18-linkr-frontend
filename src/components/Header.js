@@ -1,18 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { black, white } from "../constants/colors";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { Link, Navigate } from "react-router-dom";
-import React, { useContext } from 'react';
-import { AuthContext } from './AuthContext'; 
+import useAuth from "../hooks/useAuth";
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
+  const { logout } = useAuth(); 
   //const { user } = useContext(UserContext);
-  const handleLogout = () => {
-    const { setIsAuthenticated } = useContext(AuthContext); //substitua AuthContext por AuthData ou alguma outra variável da pasta contexts se não funcionar
-    setIsAuthenticated(false);
-  }
 
   return (
     <HeaderContainer >
@@ -30,7 +26,7 @@ export default function Header() {
       </div>
       
       <Logout data-test="menu" show={visible ? visible : undefined} to={"/"}>
-        <button data-test="logout" onClick={handleLogout}>Logout</button>
+        <button data-test="logout" onClick={logout()}>Logout</button>
       </Logout>
     </HeaderContainer>
   );

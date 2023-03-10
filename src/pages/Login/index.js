@@ -9,9 +9,10 @@ import Input from "../../components/Input";
 import StyledLink from "../../components/StyledLink";
 import StyledDiv from "../../components/StyledDiv";
 import { ThreeDots } from "react-loader-spinner";
+import { white } from "../../constants/colors";
 
 export default function Login() {
-  const [formData, setformData] = useState({ email: "", password: "" });
+  const [formData, setformData] = useState({ email: "", password: ""});
   const [isLoading, setIsLoading] = useState(false);
   const { auth, login } = useAuth();
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ export default function Login() {
         <Button data-test="login-btn" type="submit" disabled={isLoading}>
           {
             isLoading
-              ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+              ? <ThreeDots type="ThreeDots" color={`${white}`} height={50} width={50} />
               : "Log In"
           }
         </Button>

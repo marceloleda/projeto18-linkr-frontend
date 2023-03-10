@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { white } from "../../constants/colors";
 import Tama from "../../Assets/images/saitama.jpg"
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 
 
-export default function List_posts(){
+export default function ListPosts(){
 
     return(
         <>
@@ -50,6 +50,7 @@ img{
 }
 `;
 const ConteinerPost = styled.div`
+    font-family: 'Lato', sans-serif;
     height:150px;
     width: 505px;
     color: ${white};
