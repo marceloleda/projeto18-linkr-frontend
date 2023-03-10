@@ -28,19 +28,24 @@ const StyledDiv = styled.div`
     text-align: left;
   }
 
-  @media screen and (max-width: 800px) {
-    width: 100vh;
+  @media screen and (max-width: 375px) {
+    width: 100vw;
     height: 30%;
-    
+
     h1{
       text-align: center;
-      height: 84px;
-      width: 167px;
-      top: 10px;
+      padding-top: 50px;
+      font-size: 76px;
+      line-height: 60px;
     }
     h2{
       text-align: center;
+      font-size: 23px;
+      font-family: Oswald;
+      line-height: 34px;
     }
+
+    
   }
 `;
 

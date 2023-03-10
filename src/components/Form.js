@@ -10,8 +10,11 @@ const Form = styled.form`
   padding: 0 5% 8% 5%;
   gap: 13px;
 
-  @media screen and (max-width: 768px) {
-    
+  @media screen and (max-width: 375px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
   }
 `;
 

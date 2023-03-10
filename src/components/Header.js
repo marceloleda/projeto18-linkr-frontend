@@ -73,9 +73,14 @@ const HeaderContainer = styled.div`
     color: ${white};
   }
 
-  svg {
-    color: #red;
+  @media screen and (max-width: 375px) {
+    width: 100vw;
+    a {
+      font-size: 45px;
+      text-align: left;
+     }
   }
+
 `;
 
 const UserImage = styled.img`
@@ -113,9 +118,15 @@ const Logout = styled(Link)`
 
 
 const Icon = styled.img`
-height: 13px;
-width: 18px;
-position: fixed;
-top: 35px;
-right: 90px;
+  height: 13px;
+  width: 18px;
+  position: fixed;
+  top: 35px;
+  right: 90px;
+
+  @media screen and (max-width: 375px) {
+    height: 10px;
+    width: 14px;
+    left: 280px;
+    }
 `;

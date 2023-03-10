@@ -12,8 +12,10 @@ const Container = styled.div`
     margin-top: 65px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 375px) {
     flex-direction: column;
+    display: flex;
+    justify-content: center;
   }
 `;
 
