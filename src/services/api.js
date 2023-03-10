@@ -21,11 +21,16 @@ function timeLine(body){
   const promise = axios.post(`${BASE_URL}/timeline`, body);
   return promise;
 }
+function getPosts(){
+  const promise = axios.get(`${BASE_URL}/timeline`);
+
+  return promise;
+}
 const api = {
   login,
   signUp,
-  timeLine
-
+  timeLine,
+  getPosts
 }
 
 export default api;
