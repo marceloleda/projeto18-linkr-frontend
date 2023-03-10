@@ -29,7 +29,18 @@ const StyledDiv = styled.div`
   }
 
   @media screen and (max-width: 800px) {
+    width: 100vh;
+    height: 30%;
     
+    h1{
+      text-align: center;
+      height: 84px;
+      width: 167px;
+      top: 10px;
+    }
+    h2{
+      text-align: center;
+    }
   }
 `;
 
