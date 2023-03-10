@@ -8,6 +8,7 @@ import Form from "../../components/Form";
 import Input from "../../components/Input";
 import StyledLink from "../../components/StyledLink";
 import StyledDiv from "../../components/StyledDiv";
+import { ThreeDots } from "react-loader-spinner";
 
 
 export default function Login() {
@@ -73,7 +74,11 @@ the best links on the web</h2>
         />
 
         <Button type="submit" disabled={isLoading}>
-            Log In
+          {
+            isLoading
+              ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+              : "Log In"
+          }
         </Button>
 
         <StyledLink to="/register">

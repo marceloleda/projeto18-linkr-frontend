@@ -10,6 +10,10 @@ const Button = styled.button`
   border: none;
   border-radius: 4.5px;
   
+  cursor: pointer;
+  pointer-events: ${(props) => props.disabled ? "none" : "all"};
+  opacity: ${(props) => props.disabled ? 0.7 : 1};
+  
   font-size: 27px;
   line-height: 40px;
   text-align: center;

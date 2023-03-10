@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import api from "../../services/api";
+import { ThreeDots } from 'react-loader-spinner';
 import Button from "../../components/Button";
 import Container from "../../components/Container";
 import Form from "../../components/Form";
@@ -82,7 +83,13 @@ the best links on the web</h2>
           required
         />
 
-        <Button type="submit" disabled={isLoading}> Sign Up </Button>
+        <Button type="submit" disabled={isLoading}>
+        {
+            isLoading
+              ? <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+              : "Sign Up"
+          }
+        </Button>
 
         <StyledLink to="/">
         Switch back to log in
