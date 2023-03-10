@@ -34,13 +34,17 @@ export default function ListPosts(){
                     <h1>{post.description}</h1>
                     {post.metadata && (
                         <MetadataBox>
-                            <h3>{post.metadata.title}</h3>
-                            <p>{post.metadata.description}</p>
-                            <a href={post.metadata.url} target="_blank" rel="noreferrer"> </a>
+                            <Div1>
+                                <h3>{post.metadata.title}</h3>
+                                <p>{post.metadata.description}</p>
+                                <h2>{post.metadata.url}</h2>
+                            </Div1>
 
-                            <div>
-                                <img src={post.metadata.image} alt="metadata"/>
-                            </div>
+                            <a href={post.metadata.url} target="_blank" rel="noreferrer"> 
+                                <div>
+                                    <img src={post.metadata.image} alt="metadata"/>
+                                </div>
+                            </a>
                         </MetadataBox>
                     )}
                     </PostText>
@@ -55,6 +59,10 @@ export default function ListPosts(){
     );
 
 }
+const Div1 = styled.div`
+display:flex;
+flex-direction: column;
+`;
 const PostText = styled.div`
 min-height: 50px;
 max-height: 200px;
@@ -111,6 +119,14 @@ const MetadataBox = styled.div`
     line-height: 19px;
 
     color: #CECECE;
+  }
+  h2{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+
+    color: #CECECE;
+
   }
   p{
     font-weight: 400;
