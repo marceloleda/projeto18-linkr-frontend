@@ -102,6 +102,9 @@ img{
 }
 `;
 const ConteinerPost = styled.div`
+
+    font-family: 'Lato', sans-serif;
+    height:150px;
     width: 505px;
     color: ${white};
 `;
