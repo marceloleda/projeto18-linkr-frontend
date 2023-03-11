@@ -61,7 +61,7 @@ export default function TimeLine(){
                         </form>
                     </ConteinerInput>
                 </PublishBox>
-                {<ListPosts/>}
+                {<ListPosts/> ? <ListPosts/> : "There are no posts yet"}
             </Conteiner>
         </>
     );
