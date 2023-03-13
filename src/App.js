@@ -15,7 +15,7 @@ export default function App() {
             <Route path="/" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/timeline" element={<TimeLine />} />
-            <Route path="/" element={<componente />} />
+            <Route path="/user/:id" element={<componente />} />
           </Routes>
         </BrowserRouter>
       </ContainerApp>

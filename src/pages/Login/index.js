@@ -19,7 +19,7 @@ export default function Login() {
 
   useEffect(() => {
     if (auth && auth.token) {
-      navigate("/");
+      navigate("/timeline");
     }
   }, []);
 

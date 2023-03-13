@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Tama from "../../Assets/images/saitama.jpg"
+import Tama from "../../assets/images/saitama.jpg"
 import Header from "../../components/Header";
 import { blue, white } from "../../constants/colors";
 import api from "../../services/api";

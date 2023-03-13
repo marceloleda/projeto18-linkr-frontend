@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from "styled-components";
 import { black, white } from "../constants/colors";
-import up from "../Assets/images/up.svg"
-import down from "../Assets/images/down.svg"
+import up from "../assets/images/up.svg"
+import down from "../assets/images/down.svg"
 import { Link, Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
