@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { white } from "../../constants/colors";
-import Tama from "../../Assets/images/saitama.jpg"
+import Tama from "../../assets/images/saitama.jpg"
 import React, { useState, useEffect } from 'react';
 import api from "../../services/api";
 
 
 export default function ListPosts(){
     const [posts, setPosts] = useState()
+    
     useEffect(()=>{
         const promise = api.getPosts();
         promise.then((res)=>{
@@ -21,7 +22,7 @@ export default function ListPosts(){
 
     return(
 
-        <>
+        <TimelineContainer>
             {posts ? (
             posts.map(post => (
                 <PostBox key={post.id}>
@@ -58,10 +59,17 @@ export default function ListPosts(){
             ) : (
             <p>Loading ...</p>
             )}
-        </>
+        </TimelineContainer>
     );
 
 }
+
+const TimelineContainer = styled.section`
+    p{
+        font-size: 24px;
+        margin-top: 40%;
+    }
+`
 const Div1 = styled.div`
 display:flex;
 flex-direction: column;
